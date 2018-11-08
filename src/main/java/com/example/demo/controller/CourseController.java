@@ -13,10 +13,22 @@ import java.util.List;
 @RequestMapping
 public class CourseController {
 
-    @GetMapping(path = "/", produces = "application/json")
+    //通过PATH访问
+    @GetMapping(path = "/course", produces = "application/json")
+    //下面是CONTROLLER进行MAPPING到一个服务
+    //findAllCourse DeleteCourse findAllCourseById
     public HttpEntity findAllCourses(){
        // List<CourseDto> allCourses = courseService.findAllCourses();
 
         return new ResponseEntity<>("OK",HttpStatus.OK);
     }
+
+    @GetMapping(path = "/", produces = "application/json")
+    //下面是CONTROLLER进行MAPPING到一个服务
+    public HttpEntity findIndex(){
+        // List<CourseDto> allCourses = courseService.findAllCourses();
+
+        return new ResponseEntity<>("This is Index",HttpStatus.OK);
+    }
+
 }
